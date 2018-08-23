@@ -1,10 +1,10 @@
 /**
  * @file
- * jQuery functions for analytics.
+ * JQuery functions for analytics.
  *
  * Step 1: Plug your Google Web Property ID into the following code and
  *  place in your theme's html.html.twig above the closing body tag:
- * 
+ *
  *  <!-- Google Analytics -->
  *  <!-- Global site tag (gtag.js) - Google Analytics -->
  *  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34092501-10"></script>
@@ -14,7 +14,7 @@
  *    gtag('js', new Date());
  *    gtag('config', 'WEB_PROPERTY_ID');
  *  </script>
- * 
+ *
  * Step 2: Set up a custom dimension for an Auth0 user in your Google Analytics account
  *  following these instructions:
  *  https://support.google.com/analytics/answer/2709829#set_up_custom_dimensions
@@ -23,9 +23,12 @@
  *  attach([element], [category], [label], [action (optional)]);
  */
 
-(function($, drupalSettings){
+(function ($, drupalSettings) {
+
+  'use strict';
+
   Drupal.behaviors.ga_analytics = {
-    attach: function(context) {
+    attach: function (context) {
 
       var user = drupalSettings.auth0_user;
 
@@ -36,7 +39,7 @@
 
       /*
        * Enter each item that needs to have event tracking using the following syntax:
-       * 
+       *
        * attach([element], [category], [label], [action (optional)]);
        *
        * E.g.
@@ -46,7 +49,7 @@
        */
 
       function attach(element, category, label, action = 'Click') {
-        $(element).click(function() {
+        $(element).click(function () {
           ga('send', {
             hitType: 'event',
             eventCategory: category,

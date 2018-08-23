@@ -8,7 +8,6 @@
  * Google Analytics.
  *
  * @author: Beverly Lanning, bemarlan
- * 07/26/2018
  */
 
 use Drupal\analytics\Controller\AnalyticsController;
@@ -19,11 +18,11 @@ use Drupal\analytics\Controller\AnalyticsController;
  * Get Auth0 User ID and pass into Google Analytics js functions.
  */
 function analytics_page_attachments(array &$page) {
-	$controller = new AnalyticsController();
-	$auth0User = $controller->getAuth0User();
+  $controller = new AnalyticsController();
+  $auth0User = $controller->getAuth0User();
 
-	if ($auth0User) {
-		$page['#attached']['drupalSettings']['auth0_user'] = $auth0User;
-		$page['#attached']['library'][] = 'analytics/ga_analytics';
-	}
+  if ($auth0User) {
+    $page['#attached']['drupalSettings']['auth0_user'] = $auth0User;
+    $page['#attached']['library'][] = 'analytics/ga_analytics';
+  }
 }
