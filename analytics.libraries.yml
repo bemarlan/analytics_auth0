@@ -5,3 +5,4 @@ ga_analytics:
     - core/jquery.once
     - core/jquery
     - core/drupalSettings
+    
