@@ -3,8 +3,6 @@ description: 'Retrieves the Auth0 User ID and passes it to custom Google Analyti
 core: 8.x
 type: module
 package: 'Other'
-
 hidden: false
-
 dependencies:
-  - auth0
+  - auth0:auth0
